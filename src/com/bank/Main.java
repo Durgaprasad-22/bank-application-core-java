@@ -19,7 +19,10 @@ public class Main {
             System.out.println("3. Withdraw Money");
             System.out.println("4. Check Balance");
             System.out.println("5. Update Your name");
-            System.out.println("6. Exit");
+            System.out.println("6. Close Account");
+            System.out.println("7. Check Account Status");
+            System.out.println("8. Exit");
+            
             
             
             System.out.println("Enter Your choice : ");
@@ -53,8 +56,16 @@ public class Main {
                 String newName = sc.nextLine();
                 account1.setAccountHolder(newName);;
                 break;
+                
+            case 6 :
+            	account1.closeAccount();
+            	break;
             	
-            case 6:
+            case 7 :
+            	System.out.println(account1.isAccountActive());
+            	break;
+            	
+            case 8:
                 System.out.println("Thank you for banking with us!");
                 break;
             	
@@ -63,7 +74,7 @@ public class Main {
             	
             }
 			 
-		 }while(choice != 6 );
+		 }while(choice != 8 );
 			
 		 sc.close();
 	}
