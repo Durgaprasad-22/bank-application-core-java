@@ -18,7 +18,9 @@ public class Main {
             System.out.println("2. Deposit Money");
             System.out.println("3. Withdraw Money");
             System.out.println("4. Check Balance");
-            System.out.println("5. Exit");
+            System.out.println("5. Update Your name");
+            System.out.println("6. Exit");
+            
             
             System.out.println("Enter Your choice : ");
             choice = sc.nextInt();
@@ -26,7 +28,7 @@ public class Main {
             switch(choice) {
             
             case 1 :
-            	account1.displayDetails();
+            	System.out.println(account1.toString());
             	break;
             
             case 2 :
@@ -42,10 +44,17 @@ public class Main {
             	break;
             	
             case 4 :
-            	account1.checkBalance();
+            	System.out.println("Balance : "+account1.getBalance());
             	break;
             	
-            case 5:
+            case 5 :
+            	sc.nextLine(); // Consume newline left by nextInt()
+                System.out.println("Enter your new name:");
+                String newName = sc.nextLine();
+                account1.setAccountHolder(newName);;
+                break;
+            	
+            case 6:
                 System.out.println("Thank you for banking with us!");
                 break;
             	
@@ -54,7 +63,7 @@ public class Main {
             	
             }
 			 
-		 }while(choice != 5 );
+		 }while(choice != 6 );
 			
 		 sc.close();
 	}

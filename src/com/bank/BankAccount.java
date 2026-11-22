@@ -21,6 +21,51 @@ public class BankAccount {
 	}
 	
 	
+	
+	public String getAccountHolder() {
+		return accountHolder;
+	}
+
+
+
+	public void setAccountHolder(String accountHolder) {
+		if(accountHolder !="" && accountHolder != null) {
+		this.accountHolder = accountHolder;}
+		else {
+			System.out.println("Invalid name !");
+		}
+	}
+
+
+
+	public long getAccountNumber() {
+		return accountNumber;
+	}
+
+
+
+	public void setAccountNumber(long accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+
+
+	@Override
+	public String toString() {
+	    return "accountHolder=" + accountHolder
+	            + ",\naccountNumber=" + accountNumber
+	            + ", \nbalance=" + balance;
+	}
+
+
+
+	public double getBalance() {
+		return balance;
+	}
+
+
+
+
 	public void depoite(double amount) {
 		
 		if(amount > 0 ) {
@@ -45,19 +90,11 @@ public class BankAccount {
 		
 	}
 	
-	public void checkBalance() {
-		
-		System.out.println("Balance : "+balance);
-		
-	}
 	
-	public void displayDetails() {
-		
-		System.out.println("Account Holder: " + accountHolder);
-        System.out.println("Account Number: " + accountNumber);
-        System.out.println("Balance: " + balance);
-		
-	}
+	
+
+	
+
 	
 	
 	
