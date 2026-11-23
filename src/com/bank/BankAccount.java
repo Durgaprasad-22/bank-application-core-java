@@ -67,7 +67,7 @@ public class BankAccount {
 
 
 
-	public void depoite(double amount) {
+	public void deposit(double amount) {
 		
 		if ( accountActive == false ) {
 			System.out.println("Transaction failed.\r\n"
@@ -120,6 +120,16 @@ public class BankAccount {
 			System.out.println("Cannot close account.\r\n"
 					+ "Please withdraw your remaining balance first.");
 		}
+	}
+
+
+
+	public void displayDetails() {
+		// TODO Auto-generated method stub
+		System.out.println("accountHolder=" + accountHolder
+	            + ",\naccountNumber=" + accountNumber
+	            + ", \nbalance=" + balance);
+		
 	}
 	
 
