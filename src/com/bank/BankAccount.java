@@ -28,9 +28,9 @@ public class BankAccount {
 	}
 
 
-
+//updated the validation | durga
 	public void setAccountHolder(String accountHolder) {
-		if(accountHolder !="" && accountHolder != null) {
+		if(accountHolder !=null && !accountHolder.trim().isEmpty()) {
 		this.accountHolder = accountHolder;}
 		else {
 			System.out.println("Invalid name !");
@@ -43,11 +43,6 @@ public class BankAccount {
 		return accountNumber;
 	}
 
-
-
-	public void setAccountNumber(long accountNumber) {
-		this.accountNumber = accountNumber;
-	}
 
 
 
@@ -64,25 +59,26 @@ public class BankAccount {
 		return balance;
 	}
 
+//removed the setAccountNumber setter | Durga
 
 
-
+	//improved the validation logic | Durga
 	public void deposit(double amount) {
 		
-		if ( accountActive == false ) {
+		if ( !accountActive ) {
 			System.out.println("Transaction failed.\r\n"
 					+ "Account is closed.");
+			return ;
 		}
-		else {
 		
-			if(amount > 0 ) {
-				balance = balance + amount;
-				System.out.println(amount+" is Deposited Successfully..!");
-			}
-			else {
-				System.out.println("invalid deposite money");
-			}
+		if(amount <=0 ) {
+	        System.out.println("Invalid deposit amount!");
+	        return;
 		}
+		
+		balance +=amount ;
+		
+		System.out.println(amount + " deposited successfully!");
 		
 	}
 	
